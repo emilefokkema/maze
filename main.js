@@ -7,8 +7,9 @@ requirejs([
 	"positionableThing",
 	"thingWalker",
 	"joystick",
-	"showPopup"],
-	function(levelProvider, progressBar, mazeMaker, space, svgMazeDrawer,positionableThing,thingWalker,makeJoystick,showPopup){
+	"showPopup",
+	"actionsequence"],
+	function(levelProvider, progressBar, mazeMaker, space, svgMazeDrawer,positionableThing,thingWalker,makeJoystick,showPopup,actionSequence){
 		var h = window.innerHeight;
 		var w = window.innerWidth;
 		Array.prototype.first = function(test){
@@ -130,7 +131,7 @@ requirejs([
 			console.log("beginning to play level "+l.number);
 			space.setBoxSize(l.boxSize);
 			var createProgress = progressBar().createProgressPart;
-			var seq = structureHelpers.actionSequence();
+			var seq = actionSequence();
 			mazeMaker.make(seq, space.getMaxX(), space.getMaxY(), createProgress);
 			svgMazeDrawer.draw(seq, createProgress, space.getBoxSize(), false, w, space.getInnerHeight());
 			seq.add(function(soFar, done, update){
