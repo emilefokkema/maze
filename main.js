@@ -88,7 +88,7 @@ requirejs([
 				yellowCircle.remove();
 				try{
 					console.log("removing svg");
-					body.removeChild(svg);
+					document.body.removeChild(svg);
 				}catch(e){
 					console.log("svg had already been removed");
 				}
