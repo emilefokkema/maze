@@ -1,15 +1,16 @@
 requirejs([
-	"direction",
-	"timeoutwhile",
 	"levelProvider",
 	"progressBar",
 	"mazeMaker",
 	"space",
 	"svgMazeDrawer",
-	"positionableThing"],
-	function(direction, timeoutWhile, levelProvider, progressBar, mazeMaker, space, svgMazeDrawer,positionableThing){
-		var w = window.innerHeight;
-		var h = window.innerWidth;
+	"positionableThing",
+	"thingWalker",
+	"joystick",
+	"showPopup"],
+	function(levelProvider, progressBar, mazeMaker, space, svgMazeDrawer,positionableThing,thingWalker,makeJoystick,showPopup){
+		var h = window.innerHeight;
+		var w = window.innerWidth;
 		Array.prototype.first = function(test){
 			var res, found = false;
 			for(var i=0;i<this.length;i++){
@@ -25,9 +26,7 @@ requirejs([
 		};
 		
 		var joystick;
-		var chooseRandom = function(arr){
-			return arr[Math.floor(Math.random() * arr.length)];
-		};
+		
 
 		
 		var weAreOnMobile = function(){
@@ -37,8 +36,8 @@ requirejs([
 		if(weAreOnMobile()){
 			var joystickSize = 350;
 			space.setBottomPadding(joystickSize);
-			joystick = mazeGame.getJoystickMaker(body, structureHelpers.sender, mazeMaker.direction)((w - joystickSize)/2,space.getInnerHeight(),joystickSize);
-			body.appendChild(joystick.svg);
+			joystick = makeJoystick((w - joystickSize)/2,space.getInnerHeight(),joystickSize);
+			document.body.appendChild(joystick.svg);
 		}
 
 		var playLevelWithModel = function(svg, l, model, onSucceed, onFail, joystick){
@@ -112,7 +111,7 @@ requirejs([
 				}
 			};
 			
-			body.appendChild(svg);
+			document.body.appendChild(svg);
 			
 			var start = function(){
 				walkers.map(function(w){
