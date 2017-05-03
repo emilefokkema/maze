@@ -1,0 +1,83 @@
+body{background-color:#000;overflow: hidden;padding:0px;}
+span{
+	float: left;
+}
+.progress-total{
+	width:100%;
+	height:5px;
+	background-color: #333;
+	position: absolute;
+	left:0px;
+	top:50%;
+	-webkit-transform:translateY(-50%);
+	transform:translateY(-50%);
+	padding:0px;
+}
+.progress-container{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+.progress-text{
+	color:#fff;
+	font-size: 15px;
+	font-family: Verdana;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-150%);
+	-webkit-transform:translate(-50%,-150%);
+}
+.progress-part{
+	height:100%;
+	background-color: #fff;
+	padding: 0px;
+	position: relative;
+	left:0px;
+	top:0px;
+}
+.circle {
+	width:30px;
+	height: 20px;
+	background-repeat: no-repeat;
+}
+.redcircle {
+	background-image: url(data:image/svg+xml;utf8,%3Csvg%20width=%2230%22%20height=%2220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%2215%22%20cy=%2210%22%20r=%2210%22%20fill=%22#f00%22/%3E%3C/svg%3E);
+}
+.yellowcircle {
+	background-image: url(data:image/svg+xml;utf8,%3Csvg%20width=%2230%22%20height=%2220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%2215%22%20cy=%2210%22%20r=%2210%22%20fill=%22#ff0%22/%3E%3C/svg%3E);
+}
+.greencircle {
+	background-image: url(data:image/svg+xml;utf8,%3Csvg%20width=%2230%22%20height=%2220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%2215%22%20cy=%2210%22%20r=%2210%22%20fill=%22#0f0%22/%3E%3C/svg%3E);
+}
+.popup{
+	background-color:#000;
+	border: 1pt solid #fff;
+	border-radius:3px;
+	font-family:sans-serif;
+	font-size:20px;
+	color:#fff;
+}
+.popup-container{
+	padding:20px;
+	left:50%;
+	transform:translateX(-50%);
+	-webkit-transform:translateX(-50%);
+	position: fixed;
+	transition-property:top;
+	transition-duration:0.3s;
+	-webkit-transition-property:top;
+	-webkit-transition-duration:0.3s;
+	width:50%;
+	height: 30%;
+}
+div{color:#fff;}
+.popup-button{
+	position: absolute;
+	bottom:20px;
+}
+.left{left:20px;}
+.right{right:20px;}
+div{color:#fff;}
