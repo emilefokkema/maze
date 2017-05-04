@@ -1,4 +1,4 @@
-define(["space","copySet"],function(space, copySet){
+define(["space","copyset"],function(space, copySet){
 	var all = [], copies = copySet([], function(o){
 		var c = {
 			setPosition:o.setPosition
