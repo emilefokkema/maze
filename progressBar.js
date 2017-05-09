@@ -15,7 +15,7 @@ define(function(){
 	var body = document.body;
 	return function(){
 		var started = false, currentPercentage = 0, done = false;
-		var bar = makeNode("<div id='1' class='progress-container'><div class='progress-text' id='3'></div><div class='progress-total'><div id='2' class='progress-part'></div></div></div>",function(tot,part,text){
+		var bar = requireElement("<div id='1' class='progress-container'><div class='progress-text' id='3'></div><div class='progress-total'><div id='2' class='progress-part'></div></div></div>",function(tot,part,text){
 			return {
 				append:function(){
 					body.appendChild(tot);

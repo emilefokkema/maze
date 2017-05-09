@@ -6,10 +6,10 @@ define(function(){
 		disappear = function(){
 			body.removeChild(div.node);
 		};
-		div = makeNode("<div id='2' class='popup popup-container' style='top:"+(2*h)+"px'><div>"+html+"</div><div id='1'></div></div>",function(buttonDiv, container){
+		div = requireElement("<div id='2' class='popup popup-container' style='top:"+(2*h)+"px'><div>"+html+"</div><div id='1'></div></div>",function(buttonDiv, container){
 			var ok, cancel;
 			if(confirm){
-				ok = makeNode("<input type='button' class='popup popup-button right' value='OK'/>");
+				ok = requireElement("<input type='button' class='popup popup-button right' value='OK'/>");
 				buttonDiv.appendChild(ok);
 				ok.onclick = function(){
 					disappear();
@@ -17,7 +17,7 @@ define(function(){
 				};
 			}
 			if(reject){
-				cancel = makeNode("<input type='button' class='popup popup-button left' value='Cancel'/>");
+				cancel = requireElement("<input type='button' class='popup popup-button left' value='Cancel'/>");
 				buttonDiv.appendChild(cancel);
 				cancel.onclick = function(){
 					disappear();
